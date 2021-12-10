@@ -1,0 +1,23 @@
+
+{
+  "name": "com.moolt.packages.net",
+  "displayName": "AudioSourceEvents",
+  "version": "0.0.1",
+  "unity": "2019.4",
+  "author": {
+    "name": "Malte Weiß ",
+    "email": "malteweiss93@gmail.com",
+    "url": "https://github.com/Moolt"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Moolt/UnityAudioSourceEvents.git?path=/Packages/AudioSourceEvents"
+  },
+  "keywords": [
+    "AudioSource",
+    "Event",
+    "Callback"
+  ],
+  "description": "Adds events / callbacks to Unity AudioSource to detect Start, Pause, Resume and Stopped events."
+}
