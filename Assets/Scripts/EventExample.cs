@@ -1,33 +1,30 @@
-using AudioSourceEvents.Scripts;
+using AudioSourceEvents;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace AudioSourceEvents.Example.Scripts
+[RequireComponent(typeof(AudioSource))]
+public class EventExample : MonoBehaviour
 {
-    [RequireComponent(typeof(AudioSource))]
-    public class EventExample : MonoBehaviour
+    [SerializeField] private Text text;
+
+    private AudioSource _audioSource;
+    private IAudioEventSource _eventSource;
+
+    private void Start()
     {
-        [SerializeField] private Text text;
+        _audioSource = GetComponent<AudioSource>();
+        _eventSource = _audioSource.RequestEventHandlers();
 
-        private AudioSource _audioSource;
-        private IAudioEventSource _eventSource;
+        _eventSource.Changed += OnAudioSourceChanged;
+    }
 
-        private void Start()
-        {
-            _audioSource = GetComponent<AudioSource>();
-            _eventSource = _audioSource.RequestEventHandlers();
+    private void OnDestroy()
+    {
+        _eventSource.Changed -= OnAudioSourceChanged;
+    }
 
-            _eventSource.Changed += OnAudioSourceChanged;
-        }
-
-        private void OnDestroy()
-        {
-            _eventSource.Changed -= OnAudioSourceChanged;
-        }
-
-        private void OnAudioSourceChanged(object sender, AudioState state)
-        {
-            text.text = state.ToString();
-        }
+    private void OnAudioSourceChanged(object sender, AudioState state)
+    {
+        text.text = state.ToString();
     }
 }

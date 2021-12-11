@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace AudioSourceEvents.Scripts
+namespace AudioSourceEvents
 {
     [RequireComponent(typeof(AudioSource))]
     public class AudioSourceObserver : MonoBehaviour

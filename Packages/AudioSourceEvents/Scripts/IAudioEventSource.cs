@@ -1,6 +1,6 @@
 using System;
 
-namespace AudioSourceEvents.Scripts
+namespace AudioSourceEvents
 {
     public interface IAudioEventSource
     {

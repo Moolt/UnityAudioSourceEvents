@@ -1,4 +1,4 @@
-namespace AudioSourceEvents.Scripts
+namespace AudioSourceEvents
 {
     public enum AudioState
     {

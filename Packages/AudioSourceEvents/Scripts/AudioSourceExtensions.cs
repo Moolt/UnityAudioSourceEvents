@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace AudioSourceEvents.Scripts
+namespace AudioSourceEvents
 {
     public static class AudioSourceExtensions
     {
