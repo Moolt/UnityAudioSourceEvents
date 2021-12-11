@@ -1,4 +1,4 @@
-# UnityAudioSourceEvents
+# Events for Unity AudioSource
 This package adds helper classes to get notified when a Unity `AudioSource` starts playing, is paused or played until the end. Both C# events and a base class with callbacks are supported.
 
 The following states are observed:
