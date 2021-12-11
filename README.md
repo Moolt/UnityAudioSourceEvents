@@ -78,6 +78,6 @@ It's implemented using polling the `isPlaying` state of an `AudioSource`. While 
 
 ## Sample
 
-This repository contains sample scenes where you can see the code provided above in action. ( [Download zip](https://github.com/Moolt/UnityAudioSourceEvents.git) )
+This repository contains sample scenes where you can see the code provided above in action. ( [Download zip](https://github.com/Moolt/UnityAudioSourceEvents/archive/refs/heads/main.zip) )
 
 ![img](.documentation/demo.gif)
