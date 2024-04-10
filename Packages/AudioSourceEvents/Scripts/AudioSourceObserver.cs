@@ -60,7 +60,7 @@ namespace AudioSourceEvents
                 return;
             }
 
-            if (AlmostEqual(_audioSource.time, _audioSource.clip.length))
+            if (AlmostEqual(_audioSource.time, _audioSource.clip.length) || AlmostEqual(_audioSource.time, 0f))
             {
                 OnAudioStopped();
             }
