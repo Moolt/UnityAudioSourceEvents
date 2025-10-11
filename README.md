@@ -8,6 +8,8 @@ The following states are observed:
 * Resumed
 * Stopped
 
+Note: If you are using `AudioRandomContainer` on the `AudioSource` then only `Started` and `Stopped` events will be available because ARCs don't support pausing.
+
 ## Installation
 
 The package can be installed via the Unity Package Manager.
