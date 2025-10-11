@@ -7,7 +7,7 @@ public class ExampleButton : MonoBehaviour
 
     private void Start()
     {
-        _audioSource = FindObjectOfType<AudioSource>();
+        _audioSource = FindFirstObjectByType<AudioSource>();
         _animator = GetComponent<Animator>();
     }
     

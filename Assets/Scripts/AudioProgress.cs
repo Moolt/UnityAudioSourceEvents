@@ -10,10 +10,9 @@ public class AudioProgress : MonoBehaviour
 
     private void Start()
     {
-        _audioSource = FindObjectOfType<AudioSource>();
+        _audioSource = FindFirstObjectByType<AudioSource>();
         _progressTransform = progressImage.GetComponent<RectTransform>();
     }
-
 
     private void Update()
     {

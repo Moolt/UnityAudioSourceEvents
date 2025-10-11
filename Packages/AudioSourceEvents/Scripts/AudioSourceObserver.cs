@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace AudioSourceEvents
 {
@@ -43,7 +44,7 @@ namespace AudioSourceEvents
                 return;
             }
 
-            if (AlmostEqual(_audioSource.time, 0f))
+            if (IsRandomAudioContainer() || HasNoProgress())
             {
                 OnAudioStart();
             }
@@ -59,8 +60,8 @@ namespace AudioSourceEvents
             {
                 return;
             }
-
-            if (AlmostEqual(_audioSource.time, _audioSource.clip.length) || AlmostEqual(_audioSource.time, 0f))
+            
+            if (IsRandomAudioContainer() || HasPlayedToCompletion())
             {
                 OnAudioStopped();
             }
@@ -68,6 +69,26 @@ namespace AudioSourceEvents
             {
                 OnAudioPaused();
             }
+        }
+        
+        private static bool AlmostEqual(float a, float b)
+        {
+            return Math.Abs(a - b) < float.Epsilon;
+        }
+
+        private bool IsRandomAudioContainer()
+        {
+            return _audioSource.clip is null && _audioSource.resource is not null;
+        }
+
+        private bool HasNoProgress()
+        {
+            return AlmostEqual(_audioSource.time, 0f);
+        }
+        
+        private bool HasPlayedToCompletion()
+        {
+            return AlmostEqual(_audioSource.time, _audioSource.clip.length) || HasNoProgress();
         }
 
         protected virtual void OnAudioStart()
@@ -92,11 +113,6 @@ namespace AudioSourceEvents
 
         protected virtual void OnAudioChanged(AudioState state)
         {
-        }
-
-        private bool AlmostEqual(float a, float b)
-        {
-            return Math.Abs(a - b) < float.Epsilon;
         }
     }
 }
